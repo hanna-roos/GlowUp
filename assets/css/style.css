@@ -1,0 +1,330 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kosugi&family=Oswald:wght@200..700&display=swap');
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
+}
+
+:root{
+--sage-green: #A5B68D;
+--sand-beige: #ECDFCC;
+--ivory: #FCFAEE;
+--orange: #DA8359;
+}
+
+
+
+/*=================== Testimonials ==================*/
+
+.bg-sand{
+    background-color: var(--ivory);
+}
+
+.container-review{
+    margin-top: 180px;
+   }
+   .heading-review{
+    text-align: center;
+    h1{
+       color: black;
+       font-family: "Oswald", sans-serif;
+       font-size: 70px;
+       font-weight: 700;
+       font-style: normal; 
+       margin-bottom: 20px;
+    }
+    p{
+    text-align: center;
+    color: black;
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 17px;
+    margin-top: 20px;
+    line-height: 25px;
+    }
+  }
+  .slider{width: 100%}
+  .slider input{display: none;}
+  .testimonials{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+   min-height: 650px;
+   perspective: 1000px;
+   overflow: hidden;
+    margin-top: 40px;
+  }
+  .testimonials .item{
+   width: 400px;
+    height: 200px;
+   padding: 30px;
+   border-radius: 10px;
+   background: var(--orange);
+   position: absolute;
+   top: 0;
+   box-sizing: border-box;
+   text-align: center;
+   transition: transform 0.4s;
+   box-shadow: 0 0 10px rgba(0,0,0,0.3);
+   user-select: none;
+   cursor: pointer;
+  }
+  .testimonials .item h1{
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+  }
+  .testimonials .item li{
+    text-align: center;
+    color: white;
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 17px;
+    margin-top: 20px;
+  }
+  .dots{display: flex; justify-content: center;align-items: center;}
+  .dots label{
+   height: 5px;
+   width: 5px;
+   border-radius: 50%;
+   cursor: pointer;
+   background-color: transparent;
+   margin: 7px;
+   transition-duration: 0.2s;
+  }
+  #t-1:checked ~ .dots label[for="t-1"],
+  #t-2:checked ~ .dots label[for="t-2"],
+  #t-3:checked ~ .dots label[for="t-3"],
+  #t-4:checked ~ .dots label[for="t-4"],
+  #t-5:checked ~ .dots label[for="t-5"]{
+   transform: scale(2);
+   background-color: transparent;
+  }
+  
+  #t-1:checked ~ .dots label[for="t-2"],
+  #t-2:checked ~ .dots label[for="t-1"],
+  #t-2:checked ~ .dots label[for="t-3"],
+  #t-3:checked ~ .dots label[for="t-2"],
+  #t-3:checked ~ .dots label[for="t-4"],
+  #t-4:checked ~ .dots label[for="t-3"],
+  #t-4:checked ~ .dots label[for="t-5"],
+  #t-5:checked ~ .dots label[for="t-4"]{
+   transform: scale(1.5);
+  }
+  
+  #t-1:checked ~ .testimonials label[for="t-3"],
+  #t-2:checked ~ .testimonials label[for="t-4"],
+  #t-3:checked ~ .testimonials label[for="t-5"],
+  #t-4:checked ~ .testimonials label[for="t-1"],
+  #t-5:checked ~ .testimonials label[for="t-2"]{
+   transform: translate3d(600px, 0, -180px) rotateY(-25deg);
+   z-index: 2;
+  }
+  
+  #t-1:checked ~ .testimonials label[for="t-2"],
+  #t-2:checked ~ .testimonials label[for="t-3"],
+  #t-3:checked ~ .testimonials label[for="t-4"],
+  #t-4:checked ~ .testimonials label[for="t-5"],
+  #t-5:checked ~ .testimonials label[for="t-1"]{
+   transform: translate3d(300px, 0, -90px) rotateY(-15deg);
+   z-index: 3;
+  }
+  
+  #t-2:checked ~ .testimonials label[for="t-1"],
+  #t-3:checked ~ .testimonials label[for="t-2"],
+  #t-4:checked ~ .testimonials label[for="t-3"],
+  #t-5:checked ~ .testimonials label[for="t-4"],
+  #t-1:checked ~ .testimonials label[for="t-5"]{
+   transform: translate3d(-300px, 0, -90px) rotateY(15deg);
+   z-index: 3;
+  }
+  
+  #t-3:checked ~ .testimonials label[for="t-1"],
+  #t-4:checked ~ .testimonials label[for="t-2"],
+  #t-5:checked ~ .testimonials label[for="t-3"],
+  #t-2:checked ~ .testimonials label[for="t-5"],
+  #t-1:checked ~ .testimonials label[for="t-4"]{
+   transform: translate3d(-600px, 0, -180px) rotateY(25deg);
+   
+  }
+  
+  #t-1:checked ~ .testimonials label[for="t-1"],
+  #t-2:checked ~ .testimonials label[for="t-2"],
+  #t-3:checked ~ .testimonials label[for="t-3"],
+  #t-4:checked ~ .testimonials label[for="t-4"],
+  #t-5:checked ~ .testimonials label[for="t-4"],
+  #t-5:checked ~ .testimonials label[for="t-5"]{
+   
+   z-index: 4;
+  }
+  .sec1{
+   display: flex;
+   justify-content: center;
+   padding: 10px 10px;
+   overflow: hidden;
+   margin-top: -20px;
+   .jpg{
+     width: 60px;
+     height: 60px;
+     border-radius: 50%;
+   }
+  }
+  .sec1-wrap{
+   margin-top: 10px;
+   margin-left: 20px;
+   overflow: hidden;
+   i{
+     color: yellow;
+     padding: 4px;
+     overflow: hidden;
+   }
+   h2{
+     font-size: 15px;
+     font-family: "Pixelify Sans", sans-serif;
+     margin-top: -5px;
+     overflow: hidden;
+     text-align: left;
+   }
+  }
+  .comment{
+   text-align: center;
+   font-family: "Roboto", sans-serif;
+   font-weight: 400;
+   font-style: normal;
+   
+   font-size: 10px;
+   margin-top: 5px;
+   margin-left: -30.5px;
+   transform: scale(75%);
+   width: 400px;
+  }
+
+  .next{
+   display: flex;
+   justify-content: flex-end;
+   margin-top: -10px;
+   font-family: "Pixelify Sans", sans-serif;
+   margin-right: 10px;
+   font-size: 12px;
+   cursor: pointer;
+   position: absolute; /* Add this */
+    bottom: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+   h2{
+     margin-right: 5px;
+   }
+   i{
+     margin-top: 6px;
+   }
+  }
+
+/*=================== Contact Us ==================*/
+
+.bg-beige {
+    background: var(--sand-beige);
+}
+
+.btn-orange {
+    background-color: var(--orange);
+}
+
+#ContactUs {
+  display: grid;
+  place-items: center; /* Centers both horizontally & vertically */
+  height: 100vh;
+}
+
+.form{
+    height: 400px;
+    width: 700px;
+    border-radius: 5px;
+    margin-left: 8rem;
+    margin-top: -10px;
+}
+
+.form_box1{
+  width: 400px;
+}
+
+.form_box2{
+  width: 400px;
+}
+
+.form_box3{
+  width: 400px;
+}
+
+.ms-6{
+  margin-left: 250px;
+}
+
+.ms-7{
+  margin-left: 5rem;
+}
+
+.contact ul{
+  list-style: none;
+  margin-top: 1.5rem;
+}
+
+.contact li {
+  padding-bottom: 1.5rem; /* Adjust this value */
+}
+
+.contact {
+  width: 350px;
+  height: 300px;
+  background: var(--sage-green);
+  border-radius: 5px;
+
+  position: absolute; /* This allows it to overlap */
+  top: 3rem; /* Move it upwards */
+  left: -5rem; /* Adjust as needed */
+  z-index: 10; /* Ensure it stays on top */
+}
+
+#ContactUs .container-fluid {
+  position: relative;
+  
+}
+
+.contact h1{
+    color: black;
+    font-family: "Oswald", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    font-style: normal; 
+    margin-left: 28px;
+    margin-top: 2rem;
+}
+
+
+.contact li{
+  color: black;
+  font-family: "oswald", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+
+.form h1{
+  color: black;
+  font-family: "Oswald", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  font-style: normal; 
+  margin-bottom: 20px;
+  margin-top: 1rem;
+}
+
+.form p{
+  color: black;
+  font-family: "kasugi", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
